@@ -1,8 +1,6 @@
-const { app } = require("../config/database")
-
 module.exports = (app) =>{
     app.get('/', (req, res) =>{
-        const ordem = req.query.ordem
+        /*const ordem = req.query.ordem
         conexao()
         let resultadoAll=null
         if(!ordem || ordem==2){
@@ -12,14 +10,20 @@ module.exports = (app) =>{
         }
         
             console.log(resultadoAll)
-            res.render('index.ejs',{resultadoAll})
+            res.render('index.ejs',{resultadoAll})*/
+            res.render('index.ejs')
+
+
     })
-}
-
-app.post('/', (req, res) =>{
-    var conexao = require ('../config/database')
+    
+    //renderizar o arquivo index.ejs na requisição / (root)
+    app.get('/', async(req,res)=>{
+    //conectar com o revisao
     conexao()
-
-    var modelo = require('../models/')
-
+    //buscar todos os dados de infos
+    const resultado = await infos.find()
+    res.render('index.ejs', {resultado })
 })
+
+
+}

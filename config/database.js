@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 
 const conexao = async() =>{
-    const atlas = await mongoose.connect('mongodb+srv://userAT:230205@fiaptec.n8xny.mongodb.net/?retryWrites=true&w=majority')
+    const atlas = await mongoose.connect('mongodb+srv://userAT:230205@fiaptec.n8xny.mongodb.net/test')
 }
-
 const modelo = mongoose.Schema({
     produto:String,
     validade:Date,

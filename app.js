@@ -1,13 +1,11 @@
 const servidor = require("./config/servidor")
-var app = servidor.app
-var porta = servidor.porta
+const app = servidor.app
+const porta = servidor.porta
 
-
-app.get('/', (req, res) =>{
-    res.redirect('./')
-})
+const index = require('./routes/index')(app)
+const cadastro = require('./routes/cadastro')(app)
 
 app.listen(porta, () => {
-    console.log('http://localhost:' + porta)
+    console.log('http://localhost/:' + porta)
 })
 
