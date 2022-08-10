@@ -1,11 +1,13 @@
-
 const servidor = require("./config/servidor")
+var app = servidor.app
+var porta = servidor.porta
 
-const app = servidor.app
 
-const porta = servidor.porta
+app.get('/', (req, res) =>{
+    res.send('servidor funcionando em http://localhost:' + porta)
+})
 
-const consign = require('consign')
-consign().include('./routes').into(app)
+app.listen(porta, () => {
+    console.log('http://localhost:' + porta)
+})
 
-app.listen(porta)
