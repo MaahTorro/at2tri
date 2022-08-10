@@ -4,7 +4,7 @@ var porta = servidor.porta
 
 
 app.get('/', (req, res) =>{
-    res.send('servidor funcionando em http://localhost:' + porta)
+    res.redirect('./')
 })
 
 app.listen(porta, () => {
