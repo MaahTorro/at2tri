@@ -1,5 +1,7 @@
 module.exports = (app) =>{
-    app.get('/', (req, res) =>{
+    app.get('/', async (req, res) =>{
+        const { produto, conexao } = require("../config/database")
+        
         /*const ordem = req.query.ordem
         conexao()
         let resultadoAll=null
@@ -8,22 +10,16 @@ module.exports = (app) =>{
         } else{
             resultadoAll = await conexao.produto.find().sort({produto:1})
         }
-        
-            console.log(resultadoAll)
-            res.render('index.ejs',{resultadoAll})*/
-            res.render('index.ejs')
-
-
-    })
     
-    //renderizar o arquivo index.ejs na requisição / (root)
-    app.get('/', async(req,res)=>{
-    //conectar com o revisao
-    conexao()
-    //buscar todos os dados de infos
-    const resultado = await infos.find()
-    res.render('index.ejs', {resultado })
-})
+        console.log(resultadoAll)
+        res.render('index.ejs',{resultadoAll})*/
 
+        conexao()
 
+        const resultado = await produto.find()
+
+        res.render('index.ejs', { resultado })
+    })
+
+    app.set('../views/index.ejs')
 }
