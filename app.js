@@ -8,7 +8,7 @@ require('./routes/excluir')(app)
 require('./routes/desfazer')(app)
 
 app.listen(porta, () => {
-    console.log('http://localhost/:' + porta)
+    console.log('http://localhost:' + porta)
 })
 
 // De 4 eh mais gosto#1234 I2SSO31 vazou o penultimo discord dela ai boykkskkkkkkkkkkkkkkkk galaxyysimm
